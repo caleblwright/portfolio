@@ -1,8 +1,7 @@
 // src/pages/Login.tsx
 import { useState } from "react";
 import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword
 } from "firebase/auth";
 import { auth } from "../lib/firebase";
 import { useNavigate } from "react-router-dom";
