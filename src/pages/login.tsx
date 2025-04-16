@@ -8,6 +8,7 @@ import { auth } from "../lib/firebase";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/input";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -74,14 +75,13 @@ export default function Login() {
         >
           {loading ? "Logging in..." : "Log In"}
         </button>
-        <button
-          onClick={handleRegister}
-          disabled={loading}
-          className="px-4 py-2 font-medium text-white bg-green-600 rounded-md hover:bg-green-700"
-        >
-          {loading ? "Creating account..." : "Register"}
-        </button>
       </div>
+      <p className="mt-4 text-sm text-center text-gray-600">
+        Don't have an account?{" "}
+        <Link to="/register" className="text-blue-600 underline">
+          Sign up here
+        </Link>
+      </p>
     </div>
   );
 }
