@@ -35,19 +35,6 @@ export default function Login() {
     }
   };
 
-  const handleRegister = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard");
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
     <div className="max-w-md p-8 mx-auto mt-20 bg-white shadow-md rounded-xl">
       <h2 className="mb-6 text-2xl font-semibold text-center text-gray-800">
