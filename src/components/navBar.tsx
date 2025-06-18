@@ -25,10 +25,18 @@ export default function NavBar() {
           <div className="relative group">
             <span className="hover:underline cursor-pointer">Projects</span>
             <div className="absolute hidden bg-white text-black p-2 rounded shadow group-hover:block top-6 left-0 z-10">
-              <Link to="/projects/foreclosure" className="block px-2 py-1 hover:bg-gray-100">
+              <Link
+                to="/projects/foreclosure"
+                className="block px-2 py-1 hover:bg-gray-100"
+              >
                 Foreclosure Scraper
               </Link>
-              {/* More projects later! */}
+              <Link
+                to="/projects/hutchens"
+                className="block px-2 py-1 hover:bg-gray-100"
+              >
+                Hutchens Data
+              </Link>
             </div>
           </div>
           <button
