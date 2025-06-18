@@ -42,7 +42,7 @@ export default function HutchensSales() {
           property_address: string;
           city_state_zip: string;
           trustee_file: string;
-          opening_bid_amount: string;
+          opening_bid: string;
         }
 
         const envelope = await res.json();
@@ -57,7 +57,7 @@ export default function HutchensSales() {
           propertyAddress: item.property_address,
           cityStateZip: item.city_state_zip,
           trusteeFile: item.trustee_file,
-          openingBidAmount: item.opening_bid_amount,
+          openingBidAmount: item.opening_bid,
         }));
 
         setSales(camelized);
