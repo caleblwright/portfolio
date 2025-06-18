@@ -1,9 +1,6 @@
 // src/pages/Login.tsx
 import { useState } from "react";
-import {
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../lib/firebase";
 import { useNavigate } from "react-router-dom";
 import Input from "../components/input";
@@ -27,19 +24,6 @@ export default function Login() {
     setError(null);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      navigate("/dashboard");
-    } catch (err: any) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleRegister = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
       navigate("/dashboard");
     } catch (err: any) {
       setError(err.message);

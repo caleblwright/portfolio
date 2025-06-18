@@ -5,6 +5,7 @@ import { useAuth } from "./context/authContext";
 import NavBar from "./components/navBar";
 import ForeclosureProject from "./pages/foreclosure";
 import Register from "./pages/register";
+import HutchensSales from "./pages/hutchensSales";
 
 export default function App() {
   const { user, loading } = useAuth();
@@ -32,6 +33,7 @@ export default function App() {
           path="/projects/foreclosure"
           element={user ? <ForeclosureProject /> : <Navigate to="/login" />}
         />
+        <Route path="/projects/hutchens" element={<HutchensSales />} />
         <Route path="/register" element={<Register />} />
       </Routes>
     </>
